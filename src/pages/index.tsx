@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import ModelFeed2 from "./ModelFeed";
+import ModelFeed2 from "../components/ModelFeed";
 
 export default function Home() {
   return (
