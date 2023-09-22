@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image";
 import ModelFeed2 from "./ModelFeed";
 
 export default function Home() {
@@ -20,11 +21,16 @@ export default function Home() {
             into your favorite games
           </div>
           <div className="flex w-full justify-center space-x-4">
-            <img src="/sneakers.png" className="object-fit h-20" />
+            <Image
+              src="/sneakers.png"
+              alt="Sneakers"
+              width={500}
+              height={300}
+            />
           </div>
           <div className="flex w-full justify-center space-x-4 ">
-            <img src="/logos.png" className="object-fit h-12 pt-4" />
-          </div>
+            <Image src="/logos.png" alt="Logos" width={500} height={300} />
+          </div>{" "}
         </div>
         <div className="flex-2">
           <video className="object-fit h-full" autoPlay loop muted>
