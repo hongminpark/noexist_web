@@ -71,12 +71,12 @@ const Model = ({
     <primitive
       ref={mesh}
       object={scene}
-      onPointerOver={(e) => {
+      onPointerOver={(e: React.PointerEvent) => {
         e.stopPropagation();
         setHovered(true);
         setIsRotating(true); // Start rotating
       }}
-      onPointerOut={(e) => {
+      onPointerOut={(e: React.PointerEvent) => {
         e.stopPropagation();
         setHovered(false);
         setIsRotating(false); // Stop rotating
@@ -91,8 +91,10 @@ const LazyModel = ({ src }: { src: string }) => {
   const isScaled = useRef(false); // Moved here to reset when LazyModel unmounts
 
   useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      setIsVisible(entry.isIntersecting);
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0]) {
+        setIsVisible(entries[0].isIntersecting);
+      }
     }, {});
 
     if (ref.current) {
