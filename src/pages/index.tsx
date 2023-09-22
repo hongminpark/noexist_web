@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import ModelFeed from "~/components/ModelFeed";
 
 export default function Home() {
   return (
@@ -41,7 +42,9 @@ export default function Home() {
       <div className="text-s flex p-2">
         <NameBoxes />
       </div>
-      <div className="text-s flex p-2">{/* <ModelFeed /> */}</div>
+      <div className="text-s flex p-2">
+        <ModelFeed />
+      </div>
     </div>
   );
 }
